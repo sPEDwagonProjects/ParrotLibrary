@@ -1,0 +1,100 @@
+﻿<Page x:Class="ParrotLibrary.View.AboutApp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ParrotLibrary.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AboutApp">
+
+    <Grid Background="White">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"> 
+            <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="32" TextWrapping="Wrap" VerticalAlignment="Top" 
+                       Foreground="#336049" FontWeight="Bold" FontFamily="{DynamicResource MenuFont}" 
+                       Text="Parrot Library"/>
+
+            <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" 
+                       Foreground="#336049" FontWeight="Bold" FontFamily="{DynamicResource MenuFont}" 
+                       Text="Локальная энциклопедия о попугаях"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                       Foreground="#336049"  FontSize="18"  FontFamily="{DynamicResource MenuFont}" >
+                <TextBlock.Text>
+                    Parrot Library - Локальное хранилище статей о попугаях. С их изображениями.
+                </TextBlock.Text>
+            </TextBlock>
+            
+            <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                       Foreground="#336049" FontSize="18" FontFamily="{DynamicResource MenuFont}" >
+                <TextBlock.Text>
+                    Приложение позволяет без интернета получить общую информацию о виде попугая и его роде, а также увидеть его фото, если оно есть.
+                </TextBlock.Text>
+            </TextBlock>
+
+            <TextBlock  Text="Создано" HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                        Foreground="#336049" FontSize="22" FontWeight="Bold" FontFamily="{DynamicResource MenuFont}" />
+            <Image Source="/Res/spedwagon.png" Stretch="Fill" Width="400" Height="400"></Image>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    
+                </Grid.ColumnDefinitions>
+                <TextBlock Visibility="Collapsed"   HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                       Foreground="#336049" FontSize="18" FontWeight="Bold" FontFamily="{DynamicResource MenuFont}" >
+                   <Run  Text="Разработчик"> </Run>
+                    <LineBreak/><LineBreak/>
+                    <Run>
+                       Даниил Мурзак
+                   </Run>
+                </TextBlock>
+                    <StackPanel>
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock  Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                       Foreground="#336049" FontSize="22" FontWeight="Bold" FontFamily="{DynamicResource MenuFont}" >
+                    <Run Text="Исходный код: "></Run>
+                </TextBlock>
+                <TextBlock x:Name="githubLink" Margin="0,0" MouseLeftButtonDown="githubLink_MouseLeftButtonDown"  Grid.Column="1" HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" 
+                       Foreground="Blue" FontSize="22" FontWeight="Bold" FontFamily="{DynamicResource MenuFont}" >
+                    
+                    <Run Text="GitHub"></Run>
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#336049"></Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                    
+                </TextBlock>
+                    </StackPanel>
+                        <StackPanel Margin="0,20" HorizontalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock  Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                                    Foreground="#336049" FontSize="22" FontWeight="Bold" FontFamily="{DynamicResource MenuFont}" >
+                                <Run Text="Сайт команды: "></Run>
+                            </TextBlock>
+                            
+                            <TextBlock x:Name="SpedWagonLink" Margin="0,0"   Grid.Column="1" HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" 
+                                Foreground="Blue" FontSize="22" FontWeight="Bold" FontFamily="{DynamicResource MenuFont}" MouseLeftButtonUp="SpedWagonLink_MouseLeftButtonUp" >
+                    
+                            <Run Text="spedwagon.online"></Run>
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#336049"></Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+        </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
